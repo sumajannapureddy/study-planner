@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goals</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="loadGoals()">
+
+<div class="app">
+
+  <div class="sidebar">
+    <h2>📘 Planner</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="planner.html">Planner</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="goals.html">Goals</a>
+    <a href="ai.html">Study Insights</a>
+    <a href="contact.html">Contact</a>
+    <a href="profile.html">Profile</a>
+
+    <button onclick="toggleDark()">🌙 Dark</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div class="main">
+
+    <h2>🎯 Goals</h2>
+
+    <!-- Add Goal -->
+    <div class="card planner-form">
+      <input id="goalInput" placeholder="Enter your goal">
+      <button onclick="addGoal()">Add Goal</button>
+    </div>
+
+    <!-- Goal List -->
+    <div id="goalList"></div>
+
+  </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Planner</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="loadTasks(); loadWeekly(); loadCalendar();">
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>📘 Planner</h2>
+
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="planner.html">📅 Planner</a>
+    <a href="analytics.html">📊 Analytics</a>
+    <a href="goals.html">🎯 Goals</a>
+    <a href="ai.html">💡Study Insights</a>
+    <a href="contact.html">📞 Contact</a>
+    <a href="profile.html">👤 Profile</a>
+
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
+    <button onclick="logout()">🚪 Logout</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <!-- Header -->
+    <div class="header">
+      <h2>📅 Study Planner</h2>
+      <p class="subtitle">Plan and track your daily study tasks efficiently</p>
+    </div>
+
+    <!-- Top Controls -->
+    <div class="planner-top card">
+      <input type="date" id="taskDate">
+
+      <select id="filter" onchange="loadTasks()">
+        <option value="all">All Tasks</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+
+    <!-- Task Input -->
+    <div class="planner-form card">
+      <input id="subject" placeholder="Enter subject">
+      <input id="hoursInput" type="number" placeholder="Hours">
+      <button onclick="addTask()">➕ Add Task</button>
+    </div>
+
+    <!-- Progress -->
+    <div class="card">
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+      <p id="progressText"></p>
+    </div>
+
+    <!-- Task List -->
+    <div class="card">
+      <h3>📝 Tasks</h3>
+      <div id="taskList" class="task-list"></div>
+    </div>
+
+    <!-- Weekly Planner -->
+    <div class="card">
+      <h3>📊 Weekly Planner</h3>
+      <div id="weekGrid" class="week-grid"></div>
+    </div>
+
+    <!-- Calendar -->
+    <div class="card">
+      <h3>📆 Today</h3>
+      <div id="calendar"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

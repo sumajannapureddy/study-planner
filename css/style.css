@@ -1,0 +1,306 @@
+/* 🌈 RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* BODY (FIXED) */
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  color:#333;
+  transition:0.3s;
+}
+
+/* 🔥 MAIN LAYOUT FIX */
+.app{
+  display:flex;
+  min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar{
+  width:230px;
+  background:#009688;
+  color:white;
+  padding:25px 20px;
+  border-radius:0 20px 20px 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.sidebar h2{
+  margin-bottom:20px;
+}
+
+.sidebar a,
+.sidebar button{
+  padding:12px;
+  border-radius:10px;
+  margin:5px 0;
+  color:white;
+  text-decoration:none;
+  border:none;
+  background:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.sidebar a:hover,
+.sidebar button:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+/* ================= MAIN ================= */
+.main{
+  flex:1;
+  padding:30px;
+}
+
+/* ================= CARDS ================= */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+/* ================= PLANNER ================= */
+.planner-form{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.planner-form input,
+.planner-form select{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+.planner-form button{
+  padding:12px 18px;
+  background:#009688;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.planner-form button:hover{
+  background:#00796b;
+}
+
+/* ================= FILTER ================= */
+.planner-top{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+  flex-wrap:wrap;
+}
+
+.planner-top input,
+.planner-top select{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* ================= TASK ================= */
+.task-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.task-item:hover{
+  transform:translateY(-3px);
+}
+
+.task-item button{
+  background:#009688;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.task-item button:hover{
+  background:#00796b;
+}
+
+/* ================= PRIORITY ================= */
+.priority{
+  padding:4px 8px;
+  border-radius:6px;
+  margin-left:10px;
+  font-size:12px;
+  color:white;
+  font-weight:600;
+}
+
+.High{ background:#e53935; }
+.Medium{ background:#ffb300; color:black; }
+.Low{ background:#43a047; }
+
+/* ================= PROGRESS ================= */
+.progress-bar{
+  width:100%;
+  height:12px;
+  background:#ddd;
+  border-radius:10px;
+  margin:15px 0;
+  overflow:hidden;
+}
+
+#progressFill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(to right, #009688, #4db6ac);
+  border-radius:10px;
+  transition:0.4s;
+}
+
+/* ================= CHART ================= */
+.chart-box{
+  margin-top:25px;
+  background:white;
+  padding:20px;
+  border-radius:15px;
+}
+
+/* ================= WEEK GRID ================= */
+.week-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.week-day{
+  background:white;
+  padding:12px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 3px 8px rgba(0,0,0,0.05);
+}
+
+/* ================= CALENDAR ================= */
+#calendar{
+  text-align:center;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+/* ================= NOTIFICATION ================= */
+.notify{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#009688;
+  color:white;
+  padding:12px 18px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  animation:slideIn 0.3s ease;
+  z-index:999;
+}
+
+@keyframes slideIn{
+  from{ transform:translateX(100%); opacity:0; }
+  to{ transform:translateX(0); opacity:1; }
+}
+
+/* ================= DARK MODE ================= */
+.dark{
+  background:#0f172a;
+  color:white;
+}
+
+.dark .sidebar{
+  background:#020617;
+}
+
+.dark .card,
+.dark .task-item,
+.dark .week-day,
+.dark .chart-box{
+  background:#1e293b;
+  color:white;
+}
+
+.dark input,
+.dark select{
+  background:#0f172a;
+  color:white;
+  border:1px solid #444;
+}
+
+/* ================= BUTTON ================= */
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:#009688;
+  color:white;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#00796b;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .app{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    height:auto;
+    border-radius:0;
+    flex-direction:row;
+    overflow-x:auto;
+  }
+
+  .main{
+    padding:15px;
+  }
+
+  .planner-form{
+    flex-direction:column;
+  }
+}
+.chart-container{
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
